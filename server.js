@@ -1,0 +1,11 @@
+const express = require('express')
+const app = express()
+
+//routes
+app.get('/', (req, res) => {
+    res.send('hello NODE API')
+})
+
+app.listen(3004, () => {
+    console.log('Node API app is running on port 3004')
+})

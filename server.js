@@ -6,6 +6,9 @@ const Product = require("./models/productModel.js");
 // FIND the link below to MongoDB
 // https://cloud.mongodb.com/v2/646e5f28d4405b0df22ba416#/metrics/replicaSet/646e5f92c82c195be4d5727d/explorer/node-API/products/find
 
+// PICTURES
+// https://pixels.com
+
 app.use(express.json());
 
 //routes

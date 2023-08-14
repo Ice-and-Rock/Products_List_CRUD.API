@@ -1,6 +1,12 @@
 const express = require("express");
+
+// Added CORS security protocol middlewear
+const cors = require('cors');
+
 const mongoose = require("mongoose");
 const app = express();
+// Use the cors middleware
+app.use(cors());
 const Product = require("./models/productModel.js");
 
 // FIND the link below to MongoDB

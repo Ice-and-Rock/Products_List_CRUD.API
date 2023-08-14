@@ -1,8 +1,22 @@
 /* styles.css */
 
+/* Color scheme */
+:root {
+    --primary-color: #007bff;       /* Blue */
+    --secondary-color: #6c757d;     /* Gray */
+    --success-color: #28a745;       /* Green */
+    --danger-color: #d33b4a;        /* Red */
+    --light-color: #f8f9fa;         /* Light gray */
+  }
+
 body {
     font-family: Arial, sans-serif;
   }
+
+.page-title {
+    display: flex;
+    justify-content: center;
+}
   
 .product-item {
     display: flex;
@@ -34,3 +48,35 @@ body {
     color: #666;
   }
   
+
+  /* Buttons */
+.delete-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .edit-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .delete-button:hover {
+    background-color: var(--danger-color);
+    color: black;
+  }
+  
+  .edit-button:hover {
+    background-color: var(--success-color);
+    color: black;
+  }

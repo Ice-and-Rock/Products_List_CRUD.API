@@ -1,3 +1,4 @@
+import openEditModal from "./modalScreen.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const productList = document.getElementById("productList");
@@ -15,12 +16,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <img src="${product.image}" alt="${product.name}" class="product-image">
         <div class="product-details">
-          <h3 class="product-name">${product.name}</h3>
+          <h2 class="product-name">${product.name}</h2>
           <p class="product-price">Price: $${product.price}</p>
           <p class="product-quantity">Quantity: ${product.quantity}</p>
+
+          
+          <button class="edit-button" data-id="${product._id}">Edit</button>
+          <button class="delete-button" data-id="${product._id}">Delete</button>
+          
         </div>
 
         `;
+
+        // Add the Edit button Listener and action (using Modal screen)
+        const editButton = listItem.querySelector(".edit-button")
+
+        editButton.addEventListener("click", () => {
+          const productId = editButton.getAttribute("data-id");
+          const product = products.find(item => item._id === productId);
+          openEditModal(product);
+        });
+
+        // Add delete button Listnener and action
+        const deleteButton = listItem.querySelector(".delete-button");
+
+        deleteButton.addEventListener("click", () => {
+          const productId = deleteButton.getAttribute("data-id");
+          
+          handleDeleteProduct(productId);
+        });
+
         productList.appendChild(listItem);
       });
     })
@@ -28,3 +53,49 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Error fetching products:", error);
     });
 });
+
+async function handleEditProduct(productId) {
+  const editedProduct = {
+    name: document.getElementById("name").value,
+    price: parseFloat(document.getElementById("price").value),
+    quantity: parseInt(document.getElementById("quantity").value)
+  };
+
+  try {
+    const response = await fetch(`http://localhost:3004/products/${productId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(editedProduct)
+    });
+
+    if (response.ok) {
+      console.log(`Product with ID ${productId} has been updated`);
+      // Optional: Update the UI or refresh the product list
+    } else {
+      console.error(`Failed to update product with ID ${productId}`);
+    }
+  } catch (error) {
+    console.error("Error updating product:", error);
+  }
+}
+
+
+
+async function handleDeleteProduct(productId) {
+  try {
+    const response = await fetch(`http://localhost:3004/products/${productId}`, {
+      method: "DELETE",
+    });
+
+    if (response.ok) {
+      console.log(`Product with ID ${productId} has been deleted`);
+      // NEEDED: Update the UI or refresh the product list
+    } else {
+      console.error(`Failed to delete product with ID ${productId}`);
+    }
+  } catch (error) {
+    console.error("Error deleting product:", error);
+  }
+}

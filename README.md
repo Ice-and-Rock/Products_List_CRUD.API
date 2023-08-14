@@ -15,6 +15,15 @@ Features
 - Run the HTML file in 'live server'
 - Boom!
 
+## Adding data to the database
+Use insomnia with JSON format:
+{
+    "name": "test",
+	"quantity": 4,
+	"price": 1000,
+	"image": "https://images.pexels.com/photos/6684255/pexels-photo-6684255.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+}
+
 ## Future Tasks...
 - Create a get request to populate the product list
     - render the product list on an HTML page

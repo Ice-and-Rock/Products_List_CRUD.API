@@ -34,3 +34,5 @@ Use insomnia with JSON format:
     - attached to an edit button for each item
 - Create a delete product function
     - attached to a delete button for each item 
+
+// https://www.youtube.com/watch?v=9OfL9H6AmhQ

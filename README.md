@@ -25,14 +25,14 @@ Use insomnia with JSON format:
 }
 
 ## Future Tasks...
-- Create a get request to populate the product list
-    - render the product list on an HTML page
-    - tweak the CSS to make it a little more stylish
+- ✅ Create a get request to populate the product list
+    - ✅ render the product list on an HTML page
+    - ✅ tweak the CSS to make it a little more stylish
 - Create an add product function
     - attached to an add button on a form at the bottom of the page
-- Create an edit product function 
+- ✅ Create an edit product function 
     - attached to an edit button for each item
-- Create a delete product function
+- ✅ Create a delete product function
     - attached to a delete button for each item 
 
 // https://www.youtube.com/watch?v=9OfL9H6AmhQ

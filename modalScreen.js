@@ -1,3 +1,5 @@
+import handleEditProduct from "./script.js";
+
 function openEditModal(product) {
     const editModal = document.getElementById("editModal");
     const modalContent = editModal.querySelector(".modal-content");

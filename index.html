@@ -1,22 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Product List</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Product List</title>
+  </head>
+  <body>
     <h1 class="page-title">Current Product list</h1>
-<ul id="productList"></ul>
+    <div class="page-intro">
+      <p>
+        Below is a list of products that are currently in the database. You can
+        add a new product, cahnge the details or delete as neccesary by clicking
+        on each button. This will send an HTTP request to the backend, await a
+        response indicating the result of the operation (success or failure)
+        then the front-end updates the UI accordingly.
+      </p>
+      <h5>
+        Front-End &rarr; HTTP Request &rarr; Back-End &rarr; Database &rarr;
+        Back-End &rarr; HTTP
+      </h5>
 
-<div id="editModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <!-- Edit form fields here -->
+      <p>
+        The front-end is written in vanilla JavaScript, the back-end is written
+        in Node.js and the database is MongoDB.
+      </p>
+
     </div>
-  </div>
+    <div class="new-product-form">
+      <button class="add-button">Add a product</button>
+    </div>
 
-  <script type="module" src="script.js"></script>
-</body>
+    <ul id="productList" class="product-items"></ul>
+
+    <div id="editModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <!-- Edit form fields here -->
+      </div>
+    </div>
+
+    <div id="deleteConfirmationModal" class="modal">
+      <div class="modal-content">
+        <p>Are you sure you want to delete this?</p>
+        <div class="modal-buttons">
+          <button class="confirm-delete-button">Yes</button>
+          <button class="cancel-delete-button">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+  </body>
 </html>

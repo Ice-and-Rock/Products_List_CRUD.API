@@ -80,7 +80,7 @@ app.put("/products/:id", async (req, res) => {
   }
 });
 
-// DELTE a product by id
+// DELETE a product by id
 app.delete("/products/:id", async (req, res) => {
   try {
     const { id } = req.params;
